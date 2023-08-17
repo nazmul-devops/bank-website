@@ -3,55 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baap Er Bank</title>
+    <title>ABC Bank Login Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header>
-        <h1 class="text-center font-bold text-4xl text-indigo-600 mt-6">Welcome to My <span class="text-3xl text-red-400">Baap er Bank!!!</span></h1>
-        <h2 class="text-center font-bold text-2xl text-indigo-600 mt-6">Funtional Transaction</h2>
-    </header>
-    <main>
-        <!-- Bank Balance  -->
-        <section>
-            <!-- Balance Section -->
-            <div class="grid grid-cols-3 gap-10 w-9/12 mx-auto mt-10">
-                <div class="text-white rounded-2xl bg-green-400 p-10 text-center">
-                    <p class="text-3xl font-semibold">Total Deposited Amount:</p>
-                    <p class="text-6xl">$<span id="deposit-total">00</span> </p>
-                </div>
-
-                
-                <div class="text-white rounded-2xl bg-blue-500 p-10 text-center">
-                    <p class="text-3xl font-semibold">Total Balance:</p>
-                    <p class="text-6xl">$<span id="balance-total">1000</span> </p>
-                </div>
-
-                <div class="text-white rounded-2xl bg-red-400 p-10 text-center">
-                    <p class="text-3xl font-semibold">Total withdrawal Amount:</p>
-                    <p class="text-6xl">$<span id="withdraw-total">00</span> </p>
+    <section class="bg-gray-50 dark:bg-gray-900">
+        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <span class="text-2xl font-semibold" >Welcome to</span>
+            <a href="#" class="flex items-center mb-6 text-5xl font-bold text-red-500 dark:text-white">
+                <img class="mr-2" src="https://abcfanbd.com/images/logo/13.png" alt="logo">
+                Bank    
+            </a>
+            <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        Sign in to your bank account
+                    </h1>
+                    <form class="space-y-4 md:space-y-6" action="#">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
+                        </div>
+                        <div>
+                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                            <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                  <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                  <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
+                                </div>
+                            </div>
+                            <a href="#" class="text-sm font-medium text-red-600 hover:underline dark:text-primary-500">Forgot password?</a>
+                        </div>
+                        <button id="login-btn" type="submit" class="w-full text-white bg-red-500 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
+                        <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                            Don’t have an account yet? <a href="#" class="font-medium text-red-600 hover:underline dark:text-red-500">Sign up</a>
+                        </p>
+                        <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                            Demo email: <span class="font-semibold">abc@bank.com</span> 
+                        </p>
+                        </p>
+                        <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                            Demo password: <span class="font-semibold">abc123</span> 
+                        </p>
+                    </form>
                 </div>
             </div>
-
-            <!-- Deposit & Withdraw section -->
-            <div class="grid grid-cols-2 gap-10 w-9/12 mx-auto mt-10">
-                <div class=" rounded-2xl bg-green-400 p-10 text-left space-y-3">
-                    <p class="text-3xl font-semibold text-white">Deposit Amount</p>
-                    <input type="text" name="" id="new-deposit-input" class="px-5 py-2 w-9/12 rounded-lg block" placeholder="Amount you want to deposit">
-                    <button id="btn-deposit" class="bg-white hover:bg-gray-200 rounded-lg px-5 py-2 font-medium text-xl text-black">Deposit</button>
-                </div>
-
-                <div class=" rounded-2xl bg-red-400 p-10 text-left space-y-3">
-                    <p class="text-3xl font-semibold text-white">Withdraw Amount</p>
-                    <input type="text" name="" id="new-withdraw-input" class="px-5 py-2 w-9/12 rounded-lg block" placeholder="Amount you want to withdraw">
-                    <button id="btn-withdraw" class="bg-white hover:bg-gray-200 rounded-lg px-5 py-2 font-medium text-xl text-black">Withdraw</button>
-                </div>
-            </div>
-
-        </section>
-    </main>
-    <script src="./js/utilities.js"></script>
-    <script src="./js/deposit.js"></script>
-    <script src="./js/withdraw.js"></script>
+        </div>
+      </section>
+      <script src="js/login.js"></script>
 </body>
 </html>
