@@ -2,14 +2,21 @@
 // step-01:
 
 document.getElementById('btn-withdraw').addEventListener('click', function(){
-    const newDepositAmount = getInputFieldValueById('new-withdraw-input');
+    const newWithdrawAmount = getInputFieldValueById('new-withdraw-input');
 
-    const previousDepositTotal = getElementValueById('withdraw-total');
-    const newDepositTotal = previousDepositTotal + newDepositAmount;
-    setTextElementValueById('withdraw-total', newDepositTotal);
-    
+    const previousWithdrawTotal = getElementValueById('withdraw-total');
+   
     const previousBalanceTotal = getElementValueById('balance-total');
-    const newBalanceTotal = previousBalanceTotal - newDepositAmount;
-    setTextElementValueById('balance-total', newBalanceTotal);
+   
+    if (newWithdrawAmount > previousBalanceTotal){
+        alert('You cannot withdraw more than your balance amount. Please enter less or equal amount of your balance.')
+    } 
+    else {
+        const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
+        setTextElementValueById('withdraw-total', newWithdrawTotal);
+        
+        const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
+        setTextElementValueById('balance-total', newBalanceTotal);
+    }
 
 });
